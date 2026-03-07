@@ -1,0 +1,147 @@
+{
+    "profile": {
+        "name": "Rohit Madhukar More",
+        "email": "rohitmadhukarmore0@gmail.com",
+        "location": "Mumbai, Maharashtra, India",
+        "availability": "Open to Internships and Backend Development Roles",
+        "image": "assets/profile.jpg",
+        "cv": "assets/cv.pdf",
+        "cgpa": "8.08 / 10"
+    },
+    "about": "Computer Engineering student and aspiring Backend Developer with hands-on experience in Java, Spring Boot, REST API development, and database-driven applications. I enjoy designing secure backend systems, building full-stack web platforms, and working on real-world projects involving authentication, scalable architectures, and data-driven applications.",
+    "skills": [
+        "Java",
+        "Spring Boot",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Python",
+        "C",
+        "REST APIs",
+        "JWT Authentication",
+        "WebSockets",
+        "SQL",
+        "Git",
+        "Postman"
+    ],
+    "techstack": [
+        {
+            "category": "Frontend",
+            "items": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "React",
+                "TypeScript"
+            ]
+        },
+        {
+            "category": "Backend",
+            "items": [
+                "Java",
+                "Spring Boot",
+                "Spring Security",
+                "Spring Data JPA",
+                "REST APIs",
+                "WebSockets",
+                "Python (FastAPI)"
+            ]
+        },
+        {
+            "category": "Databases",
+            "items": [
+                "MySQL",
+                "PostgreSQL",
+                "MongoDB"
+            ]
+        },
+        {
+            "category": "Tools",
+            "items": [
+                "Git",
+                "GitHub",
+                "Postman",
+                "IntelliJ IDEA",
+                "VS Code",
+                "Streamlit"
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "role": "Backend Web Development Intern",
+            "company": "CODTECH IT Solutions Private Limited",
+            "duration": "July 2025 - August 2025",
+            "details": [
+                "Developed and tested backend REST APIs using Spring Boot.",
+                "Designed MySQL database schemas and implemented CRUD operations.",
+                "Implemented authentication and role-based authorization using JWT.",
+                "Performed API testing using Postman and validated request/response payloads."
+            ]
+        }
+    ],
+    "internships": [
+        {
+            "role": "Backend Engineering Intern",
+            "company": "Global Pathways AI",
+            "duration": "February 2026 - Present",
+            "details": [
+                "Working on backend architecture and API development for the platform MVP.",
+                "Designing database schemas and business logic for decision-support systems.",
+                "Contributing to backend services and system architecture design."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Bachelor of Engineering in Computer Engineering",
+            "institution": "M. H. Saboo Siddik College of Engineering",
+            "duration": "2023 - 2027",
+            "details": [
+                "Currently in third year with a CGPA of 8.08",
+                "Learning core computer science fundamentals and modern web technologies"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "Movie Recommendation System",
+            "date": "2025",
+            "description": "AI-powered movie recommendation platform using Python and Streamlit that suggests movies based on similarity algorithms and TMDB dataset.",
+            "link": "https://rohit-movie-recommender.streamlit.app/",
+            "source": "https://github.com/Rohit-more-05"
+        },
+        {
+            "title": "NewsYork – News Aggregation Platform",
+            "date": "2025",
+            "description": "News aggregation web platform that fetches real-time news via APIs and supports comments, voting, and bookmarking with a prepared MySQL backend schema.",
+            "link": "https://rohit-newsyork.vercel.app/homepage.html",
+            "source": "https://github.com/Rohit-more-05"
+        },
+        {
+            "title": "AnchorSpace Social Platform",
+            "date": "2025",
+            "description": "Social networking platform enabling user profiles, posts, and community interaction built using modern web technologies.",
+            "link": "https://rohit-anchorspace.vercel.app/",
+            "source": "https://github.com/Rohit-more-05"
+        },
+        {
+            "title": "Student Intelligence Platform",
+            "date": "2025",
+            "description": "Machine learning platform predicting student academic performance using multiple ML models and interactive Streamlit dashboards.",
+            "link": "https://rohit-student-marks.streamlit.app/",
+            "source": "https://github.com/Rohit-more-05"
+        },
+        {
+            "title": "Hospital Management System Backend",
+            "date": "2024",
+            "description": "Secure Spring Boot backend implementing REST APIs, JWT authentication, OAuth2 login, and role-based access control for hospital operations.",
+            "link": "https://github.com/Rohit-more-05/Hospital-Management-System-Backend",
+            "source": "https://github.com/Rohit-more-05/Hospital-Management-System-Backend"
+        }
+    ],
+    "links": {
+        "github": "https://github.com/Rohit-more-05",
+        "linkedin": "https://linkedin.com/in/rohit-more-4b2a90371"
+    }
+}

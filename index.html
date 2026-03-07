@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="light">
+    <!-- Glassmorphic Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="brand" id="brand-name">Portfolio</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i data-feather="moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero grid-section">
+            <div class="hero-content">
+                <h1 id="hero-greeting" class="hero-title">Hello, I'm <span id="hero-name" class="accent-text"></span></h1>
+                <p id="hero-about" class="hero-subtitle"></p>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i data-feather="map-pin"></i>
+                        <span id="hero-location"></span>
+                    </div>
+                    <div class="info-item">
+                        <i data-feather="clock"></i>
+                        <span id="hero-availability"></span>
+                    </div>
+                    <div class="info-item">
+                        <i data-feather="file-text"></i>
+                        <a href="#" id="hero-cv" target="_blank" class="cv-link">Download CV</a>
+                    </div>
+                    <div class="info-item" id="github-container" style="display: none;">
+                        <i data-feather="github"></i>
+                        <a href="#" id="hero-github" target="_blank" class="cv-link">GitHub</a>
+                    </div>
+                    <div class="info-item" id="linkedin-container" style="display: none;">
+                        <i data-feather="linkedin"></i>
+                        <a href="#" id="hero-linkedin" target="_blank" class="cv-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="blob-container">
+                    <img id="hero-image" src="" alt="Profile Image" class="blob-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Sections Container -->
+        <div id="dynamic-content">
+            <!-- Sections (Skills, Techstack, Experience, Internships, Projects) will be injected here via app.js -->
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="current-year"></span> <span id="footer-name"></span>. Built with ❤️</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
