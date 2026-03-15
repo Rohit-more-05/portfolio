@@ -178,24 +178,44 @@ document.addEventListener('DOMContentLoaded', () => {
             html += `</div></section>`;
         }
 
-        // Projects
+        // Projects (Enhanced with Features and Tech)
         if (data.projects && data.projects.length > 0) {
             html += `
                 <section data-aos="fade-up" style="margin-bottom: 5rem;">
-                    <h2 class="section-title">Projects</h2>
+                    <h2 class="section-title">Featured Projects</h2>
                     <div class="card-grid">
             `;
             data.projects.forEach(proj => {
+                const hasFeatures = proj.key_features && proj.key_features.length > 0;
+                const hasTech = proj.tech_stack && proj.tech_stack.length > 0;
+
                 html += `
                         <div class="card project-card">
                             <div class="project-header">
                                 <h3 class="project-title">${proj.title}</h3>
                                 <span class="project-date">${proj.date}</span>
                             </div>
+                            ${proj.tagline ? `<p class="project-tagline"><em>${proj.tagline}</em></p>` : ''}
                             <p class="project-desc">${proj.description}</p>
-                            <div class="project-links">
-                                ${proj.link && proj.link !== '#' ? `<a href="${proj.link}" target="_blank"><i data-feather="external-link"></i> Live Demo</a>` : ''}
-                                ${proj.source && proj.source !== '#' ? `<a href="${proj.source}" target="_blank"><i data-feather="github"></i> Source Code</a>` : ''}
+                            
+                            ${hasFeatures ? `
+                                <div class="project-features">
+                                    <h4 style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--accent);">Key Features:</h4>
+                                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-secondary);">
+                                        ${proj.key_features.map(f => `<li>${f}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            ` : ''}
+
+                            ${hasTech ? `
+                                <div class="project-tech-tags" style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem;">
+                                    ${proj.tech_stack.map(t => `<span class="mini-badge" style="font-size: 0.75rem; background: var(--border-color); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px dashed var(--accent);">${t}</span>`).join('')}
+                                </div>
+                            ` : ''}
+
+                            <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                                ${proj.link && proj.link !== '#' ? `<a href="${proj.link}" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.3rem;"><i data-feather="external-link" style="width: 16px;"></i> Live Demo</a>` : ''}
+                                ${proj.source && proj.source !== '#' ? `<a href="${proj.source}" target="_blank" style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.9rem; display: flex; align-items: center; gap: 0.3rem;"><i data-feather="github" style="width: 16px;"></i> Source Code</a>` : ''}
                             </div>
                         </div>
                 `;
