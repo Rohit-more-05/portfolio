@@ -50,17 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (data.profile.cv) {
             document.getElementById('hero-cv').href = data.profile.cv;
+            // Killer Download Logic: Force download on click
+            document.getElementById('hero-cv').addEventListener('click', (e) => {
+                const link = e.currentTarget;
+                if (link.href && !link.href.startsWith('blob:')) {
+                    console.log("Direct download triggered for:", link.href);
+                }
+            });
         } else {
             document.getElementById('hero-cv').parentElement.style.display = 'none';
         }
 
-        if (data.links && data.links.github) {
-            document.getElementById('github-container').style.display = 'flex';
-            document.getElementById('hero-github').href = data.links.github;
-        }
-        if (data.links && data.links.linkedin) {
-            document.getElementById('linkedin-container').style.display = 'flex';
-            document.getElementById('hero-linkedin').href = data.links.linkedin;
+        // Helper: Parse Icons (Material Symbols & Emojis)
+        function parseIcons(text) {
+            if (!text) return '';
+            // Match :material/icon_name:
+            return text.replace(/:material\/([a-z0-9_]+):/g, '<span class="material-symbols-outlined">$1</span>');
         }
 
         const heroImg = document.getElementById('hero-image');
@@ -75,14 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('dynamic-content');
         let html = '';
 
-        // Skills (Simple list)
+        // Skills (Dashboard Grid style)
         if (data.skills && data.skills.length > 0) {
             html += `
                 <section class="mb-5" data-aos="fade-up" style="margin-bottom: 5rem;">
-                    <h2 class="section-title">Skills Overview</h2>
-                    <div class="badge-container">
-                        ${data.skills.map(s => `<span class="badge">${s}</span>`).join('')}
-                        ${data.profile.cgpa ? `<span class="badge accent-text">CGPA: ${data.profile.cgpa}</span>` : ''}
+                    <h2 class="section-title">Professional Expertise</h2>
+                    <div class="skills-dashboard">
+                        ${data.skills.map(s => `
+                            <div class="skill-tile">
+                                ${parseIcons(s)}
+                            </div>
+                        `).join('')}
                     </div>
                 </section>
             `;
@@ -92,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.techstack && data.techstack.length > 0) {
             html += `
                 <section data-aos="fade-up" style="margin-bottom: 5rem;">
-                    <h2 class="section-title">Tech Stack</h2>
+                    <h2 class="section-title">Core Technologies</h2>
                     <div class="card-grid">
             `;
             data.techstack.forEach(group => {
@@ -100,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="card">
                             <h3 class="card-title">${group.category}</h3>
                             <div class="badge-container">
-                                ${group.items.map(item => `<span class="badge">${item}</span>`).join('')}
+                                ${group.items.map(item => `<span class="badge">${parseIcons(item)}</span>`).join('')}
                             </div>
                         </div>
                 `;

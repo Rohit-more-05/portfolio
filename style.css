@@ -451,6 +451,85 @@ textarea.form-control {
     min-height: 120px;
 }
 
+/* Professional Skills Dashboard */
+.skills-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.skill-tile {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.skill-tile:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Material Symbols alignment */
+.material-symbols-outlined {
+    font-size: 20px;
+    color: var(--accent);
+    vertical-align: middle;
+}
+
+/* Enhanced Project Card items */
+.project-tagline {
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.project-features {
+    margin: 1rem 0;
+}
+
+.project-features h4 {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.project-features ul {
+    font-size: 0.8rem;
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.mini-badge {
+    font-size: 0.7rem;
+    background: var(--border-color);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.demo-btn, .source-btn {
+    text-decoration: none;
+    font-weight: 600;
+}
+
 .btn-submit {
     background-color: var(--text-primary);
     color: var(--bg-color);
@@ -467,3 +546,4 @@ textarea.form-control {
     transform: translateY(-2px);
     opacity: 0.9;
 }
+

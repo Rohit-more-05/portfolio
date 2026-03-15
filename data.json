@@ -10,19 +10,19 @@
     },
     "about": "Computer Engineering student and aspiring Backend Developer with hands-on experience in Java, Spring Boot, REST API development, and database-driven applications. I enjoy designing secure backend systems, building full-stack web platforms, and working on real-world projects involving authentication, scalable architectures, and data-driven applications.",
     "skills": [
-        "Java",
-        "Spring Boot",
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Python",
-        "C",
-        "REST APIs",
-        "JWT Authentication",
-        "WebSockets",
-        "SQL",
-        "Git",
-        "Postman"
+        ":material/terminal: Java ☕",
+        ":material/terminal: Spring Boot 🍃",
+        ":material/terminal: JavaScript 📜",
+        ":material/terminal: TypeScript 📘",
+        ":material/terminal: React ⚛️",
+        ":material/terminal: Python 🐍",
+        ":material/terminal: C 💻",
+        ":material/api: REST APIs 🔌",
+        ":material/lock: JWT Authentication 🔐",
+        ":material/lan: WebSockets ⚡",
+        ":material/database: SQL 🗄️",
+        ":material/account_tree: Git 🌿",
+        ":material/send: Postman 🚀"
     ],
     "techstack": [
         {
@@ -104,6 +104,16 @@
         }
     ],
     "projects": [
+        {
+            "title": "❤️ CORE-Vitals AI: Heart Stroke Prediction",
+            "date": "2025",
+            "tagline": "Advanced Cardiovascular Diagnostic Engine with KNN Inference.",
+            "description": "An advanced, cyberpunk-styled Streamlit web application that uses a KNN Machine Learning model to evaluate heart stroke risk based on clinical and lifestyle parameters. Features neon-accents and interactive gauge charts.",
+            "link": "https://rohit-more-vitals.streamlit.app/",
+            "source": "https://github.com/Rohit-more-05/heart-stroke-prediction",
+            "key_features": ["Machine Learning Inference", "Cyberpunk Aesthetics", "Interactive Plotly Visuals", "Categorized Medical Inputs"],
+            "tech_stack": ["Python", "Pandas", "Scikit-Learn", "Streamlit", "Plotly"]
+        },
         {
             "title": "Movie Recommendation System",
             "date": "2025",
