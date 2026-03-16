@@ -6,7 +6,21 @@
         "availability": "Open to Internships and Backend Development Roles",
         "image": "assets/profile.jpg",
         "cv": "assets/cv.pdf",
-        "cgpa": "8.08 / 10"
+        "cgpa": "8.3 / 10",
+        "socials": [
+            {
+                "platform": "GitHub",
+                "handle": "@Rohit-more-05",
+                "url": "https://github.com/Rohit-more-05",
+                "icon": "github"
+            },
+            {
+                "platform": "LinkedIn",
+                "handle": "Rohit More",
+                "url": "https://linkedin.com/in/rohit-more-4b2a90371",
+                "icon": "linkedin"
+            }
+        ]
     },
     "about": "Computer Engineering student and aspiring Backend Developer with hands-on experience in Java, Spring Boot, REST API development, and database-driven applications. I enjoy designing secure backend systems, building full-stack web platforms, and working on real-world projects involving authentication, scalable architectures, and data-driven applications.",
     "skills": [
@@ -28,42 +42,41 @@
         {
             "category": "Frontend",
             "items": [
-                "HTML",
-                "CSS",
-                "JavaScript",
-                "React",
-                "TypeScript"
+                { "name": "HTML", "icon": "html5" },
+                { "name": "CSS", "icon": "css3" },
+                { "name": "JavaScript", "icon": "javascript" },
+                { "name": "React", "icon": "react" },
+                { "name": "TypeScript", "icon": "typescript" }
             ]
         },
         {
             "category": "Backend",
             "items": [
-                "Java",
-                "Spring Boot",
-                "Spring Security",
-                "Spring Data JPA",
-                "REST APIs",
-                "WebSockets",
-                "Python (FastAPI)"
+                { "name": "Java", "icon": "java" },
+                { "name": "Spring Boot", "icon": "springboot" },
+                { "name": "Spring Security", "icon": "springsecurity" },
+                { "name": "REST APIs", "icon": "insomnia" },
+                { "name": "WebSockets", "icon": "socketdotio" },
+                { "name": "Python", "icon": "python" }
             ]
         },
         {
             "category": "Databases",
             "items": [
-                "MySQL",
-                "PostgreSQL",
-                "MongoDB"
+                { "name": "MySQL", "icon": "mysql" },
+                { "name": "PostgreSQL", "icon": "postgresql" },
+                { "name": "MongoDB", "icon": "mongodb" }
             ]
         },
         {
             "category": "Tools",
             "items": [
-                "Git",
-                "GitHub",
-                "Postman",
-                "IntelliJ IDEA",
-                "VS Code",
-                "Streamlit"
+                { "name": "Git", "icon": "git" },
+                { "name": "GitHub", "icon": "github" },
+                { "name": "Postman", "icon": "postman" },
+                { "name": "IntelliJ IDEA", "icon": "intellijidea" },
+                { "name": "VS Code", "icon": "visualstudiocode" },
+                { "name": "Streamlit", "icon": "streamlit" }
             ]
         }
     ],
@@ -98,7 +111,7 @@
             "institution": "M. H. Saboo Siddik College of Engineering",
             "duration": "2023 - 2027",
             "details": [
-                "Currently in third year with a CGPA of 8.08",
+                "Currently in third year with a CGPA of 8.3",
                 "Learning core computer science fundamentals and modern web technologies"
             ]
         }
@@ -117,41 +130,52 @@
         {
             "title": "Movie Recommendation System",
             "date": "2025",
+            "tagline": "Seamless cinematic discovery powered by similarity algorithms.",
             "description": "AI-powered movie recommendation platform using Python and Streamlit that suggests movies based on similarity algorithms and TMDB dataset.",
             "link": "https://rohit-movie-recommender.streamlit.app/",
-            "source": "https://github.com/Rohit-more-05"
+            "source": "https://github.com/Rohit-more-05",
+            "key_features": ["Content-Based Filtering", "Similarity Correlation Analysis", "TMDB API Integration", "Dynamic Poster Rendering"],
+            "tech_stack": ["Python", "Streamlit", "Pandas", "Scikit-learn"]
         },
         {
             "title": "NewsYork – News Aggregation Platform",
             "date": "2025",
+            "tagline": "Real-time news aggregation with community-driven engagement.",
             "description": "News aggregation web platform that fetches real-time news via APIs and supports comments, voting, and bookmarking with a prepared MySQL backend schema.",
             "link": "https://rohit-newsyork.vercel.app/homepage.html",
-            "source": "https://github.com/Rohit-more-05"
+            "source": "https://github.com/Rohit-more-05",
+            "key_features": ["Live API Integration", "MySQL Voting System", "User Bookmarking", "Article Categorization"],
+            "tech_stack": ["HTML", "CSS", "MySQL", "PHP"]
         },
         {
             "title": "AnchorSpace Social Platform",
             "date": "2025",
+            "tagline": "A decentralized networking hub for community interaction.",
             "description": "Social networking platform enabling user profiles, posts, and community interaction built using modern web technologies.",
             "link": "https://rohit-anchorspace.vercel.app/",
-            "source": "https://github.com/Rohit-more-05"
+            "source": "https://github.com/Rohit-more-05",
+            "key_features": ["User Profiles", "Post Management", "Activity Feeds", "Semantic Search"],
+            "tech_stack": ["React", "JavaScript", "Firebase"]
         },
         {
             "title": "Student Intelligence Platform",
             "date": "2025",
+            "tagline": "Predictive analytics for academic excellence.",
             "description": "Machine learning platform predicting student academic performance using multiple ML models and interactive Streamlit dashboards.",
             "link": "https://rohit-student-marks.streamlit.app/",
-            "source": "https://github.com/Rohit-more-05"
+            "source": "https://github.com/Rohit-more-05",
+            "key_features": ["Performance Forecasting", "Multiple ML Model Comparison", "Interactive Dashboards", "Data Distribution Analysis"],
+            "tech_stack": ["Python", "Streamlit", "Scikit-learn", "Plotly"]
         },
         {
             "title": "Hospital Management System Backend",
             "date": "2024",
+            "tagline": "Secure and scalable architecture for modern healthcare.",
             "description": "Secure Spring Boot backend implementing REST APIs, JWT authentication, OAuth2 login, and role-based access control for hospital operations.",
             "link": "https://github.com/Rohit-more-05/Hospital-Management-System-Backend",
-            "source": "https://github.com/Rohit-more-05/Hospital-Management-System-Backend"
+            "source": "https://github.com/Rohit-more-05/Hospital-Management-System-Backend",
+            "key_features": ["JWT Authentication", "Role-Based Access Control", "OAuth2 Integration", "Medical Record Indexing"],
+            "tech_stack": ["Java", "Spring Boot", "MySQL", "Spring Security"]
         }
-    ],
-    "links": {
-        "github": "https://github.com/Rohit-more-05",
-        "linkedin": "https://linkedin.com/in/rohit-more-4b2a90371"
-    }
+    ]
 }

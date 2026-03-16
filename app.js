@@ -80,6 +80,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('dynamic-content');
         let html = '';
 
+        // Socials Grid (New Header Section)
+        if (data.profile.socials && data.profile.socials.length > 0) {
+            html += `
+                <div class="socials-grid" data-aos="fade-down">
+                    ${data.profile.socials.map(social => `
+                        <a href="${social.url}" target="_blank" class="social-card">
+                            <div class="social-icon-wrapper">
+                                <img src="https://cdn.simpleicons.org/${social.icon}/${body.classList.contains('dark') ? 'ffffff' : '121212'}" alt="${social.platform}">
+                            </div>
+                            <div class="social-info">
+                                <span class="social-platform">${social.platform}</span>
+                                <span class="social-handle">${social.handle}</span>
+                            </div>
+                            <span class="external-arrow">↗</span>
+                        </a>
+                    `).join('')}
+                </div>
+            `;
+        }
+
         // Skills (Dashboard Grid style)
         if (data.skills && data.skills.length > 0) {
             html += `
@@ -97,18 +117,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Tech Stack
+        // Tech Stack (New Icons Style)
         if (data.techstack && data.techstack.length > 0) {
             html += `
                 <section data-aos="fade-up" style="margin-bottom: 5rem;">
-                    <h2 class="section-title">Core Technologies</h2>
-                    <div class="card-grid">
+                    <h2 class="section-title">Tech Stack</h2>
+                    <div class="tech-container">
             `;
             data.techstack.forEach(group => {
                 html += `
-                        <div class="card">
-                            <h3 class="card-title">${group.category}</h3>
-                            <div class="badge-container">
-                                ${group.items.map(item => `<span class="badge">${parseIcons(item)}</span>`).join('')}
+                        <div class="tech-category" style="margin-bottom: 2.5rem;">
+                            <h3 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 1rem; border-left: 3px solid var(--accent); padding-left: 0.75rem;">${group.category}</h3>
+                            <div class="tech-list" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                                ${group.items.map(item => `
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/${item.icon}/${body.classList.contains('dark') ? 'ffffff' : '121212'}" alt="${item.name}">
+                                        <span>${item.name}</span>
+                                    </div>
+                                `).join('')}
                             </div>
                         </div>
                 `;
