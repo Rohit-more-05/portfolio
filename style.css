@@ -189,8 +189,24 @@ body {
 
 .social-card:hover {
     border-color: var(--accent);
-    transform: translateY(-3px);
-    background: rgba(var(--accent-rgb), 0.05); /* Assuming accent-rgb is defined or use transparent color */
+    transform: translateY(-2px);
+    background-color: var(--accent);
+    color: #fff;
+    transition: all 0.15s ease-out;
+}
+
+.social-card:hover .social-handle,
+.social-card:hover .external-arrow {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.social-card:hover .social-icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: transparent;
+}
+
+.social-card:hover .social-icon-wrapper img {
+    filter: brightness(0) invert(1);
 }
 
 .social-icon-wrapper {
@@ -236,7 +252,17 @@ body {
 .cv-link {
     color: var(--accent);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--accent);
+    transition: all 0.15s ease-out;
+}
+
+.cv-link:hover {
+    background-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
 }
 
 .cv-link:hover {
@@ -392,7 +418,7 @@ body.dark .card:hover {
 .project-card {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    height: 100%;
 }
 
 .project-header {
@@ -412,30 +438,55 @@ body.dark .card:hover {
     color: var(--text-secondary);
 }
 
+.project-links {
+    margin-top: auto;
+    padding-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
 .project-desc {
     color: var(--text-secondary);
     margin-top: 0.5rem;
 }
 
-.project-links {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.project-links a {
-    color: var(--text-primary);
+.link-btn {
+    flex: 1;
+    text-align: center;
     text-decoration: none;
-    font-family: var(--font-mono);
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.1s ease-out, transform 0.1s ease-out, color 0.1s ease-out;
+    border: 1px solid transparent;
+    font-weight: 600;
     font-size: 0.85rem;
     display: flex;
     align-items: center;
-    gap: 0.25rem;
-    transition: color 0.2s;
+    justify-content: center;
+    gap: 0.4rem;
 }
 
-.project-links a:hover {
-    color: var(--accent);
+.demo-btn {
+    background-color: var(--accent);
+    color: #fff !important;
+}
+
+.demo-btn:hover {
+    background-color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.source-btn {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary) !important;
+}
+
+.source-btn:hover {
+    border-color: var(--accent);
+    background-color: var(--card-bg);
+    transform: translateY(-2px);
 }
 
 /* Footer */
@@ -635,4 +686,35 @@ textarea.form-control {
     transform: translateY(-2px);
     opacity: 0.9;
 }
+/* Icon Rendering */
+.icon-mask {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    background-color: var(--icon-color);
+    mask-image: var(--icon-url);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: var(--icon-url);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+}
 
+.brand-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+    filter: brightness(0) invert(var(--icon-invert, 0));
+}
+
+.dark .brand-icon {
+    --icon-invert: 1;
+}
+
+.social-icon-wrapper .icon-mask,
+.social-icon-wrapper .brand-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}

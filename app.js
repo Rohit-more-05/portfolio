@@ -2,7 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Theme Management
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
+    const sectionFeatured = document.getElementById('featured-projects');
     const body = document.body;
+
+    // Helper for robust icon rendering
+    const renderIcon = (iconStr, altText) => {
+        if (!iconStr) return '';
+        const [slug, color] = iconStr.includes('/') ? iconStr.split('/') : [iconStr, ''];
+        const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${slug}.svg`;
+        
+        if (color) {
+            return `<div class="icon-mask" style="--icon-url: url('${iconUrl}'); --icon-color: #${color};" title="${altText}"></div>`;
+        }
+        return `<img src="${iconUrl}" alt="${altText}" class="brand-icon">`;
+    };
 
     // Check system preference or local storage
     const storedTheme = localStorage.getItem('theme');
@@ -87,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${data.profile.socials.map(social => `
                         <a href="${social.url}" target="_blank" class="social-card">
                             <div class="social-icon-wrapper">
-                                <img src="https://cdn.simpleicons.org/${social.icon}/${body.classList.contains('dark') ? 'ffffff' : '121212'}" alt="${social.platform}">
+                                ${renderIcon(social.icon, social.platform)}
                             </div>
                             <div class="social-info">
                                 <span class="social-platform">${social.platform}</span>
@@ -100,21 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
 
-        // Skills (Dashboard Grid style)
-        if (data.skills && data.skills.length > 0) {
-            html += `
-                <section class="mb-5" data-aos="fade-up" style="margin-bottom: 5rem;">
-                    <h2 class="section-title">Professional Expertise</h2>
-                    <div class="skills-dashboard">
-                        ${data.skills.map(s => `
-                            <div class="skill-tile">
-                                ${parseIcons(s)}
-                            </div>
-                        `).join('')}
-                    </div>
-                </section>
-            `;
-        }
 
         // Tech Stack
         // Tech Stack (New Icons Style)
@@ -131,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="tech-list" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
                                 ${group.items.map(item => `
                                     <div class="tech-chip">
-                                        <img src="https://cdn.simpleicons.org/${item.icon}/${body.classList.contains('dark') ? 'ffffff' : '121212'}" alt="${item.name}">
+                                        ${renderIcon(item.icon, item.name)}
                                         <span>${item.name}</span>
                                     </div>
                                 `).join('')}
@@ -232,16 +230,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                     </ul>
                                 </div>
                             ` : ''}
-
                             ${hasTech ? `
                                 <div class="project-tech-tags" style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem;">
                                     ${proj.tech_stack.map(t => `<span class="mini-badge" style="font-size: 0.75rem; background: var(--border-color); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px dashed var(--accent);">${t}</span>`).join('')}
                                 </div>
                             ` : ''}
 
-                            <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                                ${proj.link && proj.link !== '#' ? `<a href="${proj.link}" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.3rem;"><i data-feather="external-link" style="width: 16px;"></i> Live Demo</a>` : ''}
-                                ${proj.source && proj.source !== '#' ? `<a href="${proj.source}" target="_blank" style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.9rem; display: flex; align-items: center; gap: 0.3rem;"><i data-feather="github" style="width: 16px;"></i> Source Code</a>` : ''}
+                            <div class="project-links" style="margin-top: auto; padding-top: 1.5rem; display: flex; gap: 1rem;">
+                                ${proj.link && proj.link !== '#' ? `<a href="${proj.link}" target="_blank" class="link-btn demo-btn" style="text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.3rem;"><i data-feather="external-link" style="width: 16px;"></i> Live Demo</a>` : ''}
+                                ${proj.source && proj.source !== '#' ? `<a href="${proj.source}" target="_blank" class="link-btn source-btn" style="text-decoration: none; font-weight: 500; font-size: 0.9rem; display: flex; align-items: center; gap: 0.3rem;"><i data-feather="github" style="width: 16px;"></i> Source Code</a>` : ''}
                             </div>
                         </div>
                 `;
@@ -249,6 +246,15 @@ document.addEventListener('DOMContentLoaded', () => {
             html += `</div></section>`;
         }
 
+        // Render Profile Image or Placeholder
+        const profileImg = data.profile.image || `https://ui-avatars.com/api/?name=${encodeURIComponent(data.profile.name)}&background=0D6EFD&color=fff&size=200`;
+        const profileImageElement = document.getElementById('hero-image');
+        if (profileImageElement) {
+            profileImageElement.src = profileImg;
+            profileImageElement.onerror = () => {
+                profileImageElement.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(data.profile.name)}&background=0D6EFD&color=fff&size=200`;
+            };
+        }
         // Contact Section
         const contactEmail = data.profile.email || "mustafaayyub.dev@gmail.com";
         html += `

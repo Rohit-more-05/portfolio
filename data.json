@@ -18,46 +18,31 @@
                 "platform": "LinkedIn",
                 "handle": "Rohit More",
                 "url": "https://linkedin.com/in/rohit-more-4b2a90371",
-                "icon": "linkedin"
+                "icon": "linkedin/0A66C2"
             }
         ]
     },
     "about": "Computer Engineering student and aspiring Backend Developer with hands-on experience in Java, Spring Boot, REST API development, and database-driven applications. I enjoy designing secure backend systems, building full-stack web platforms, and working on real-world projects involving authentication, scalable architectures, and data-driven applications.",
-    "skills": [
-        ":material/terminal: Java ☕",
-        ":material/terminal: Spring Boot 🍃",
-        ":material/terminal: JavaScript 📜",
-        ":material/terminal: TypeScript 📘",
-        ":material/terminal: React ⚛️",
-        ":material/terminal: Python 🐍",
-        ":material/terminal: C 💻",
-        ":material/api: REST APIs 🔌",
-        ":material/lock: JWT Authentication 🔐",
-        ":material/lan: WebSockets ⚡",
-        ":material/database: SQL 🗄️",
-        ":material/account_tree: Git 🌿",
-        ":material/send: Postman 🚀"
-    ],
     "techstack": [
-        {
-            "category": "Frontend",
-            "items": [
-                { "name": "HTML", "icon": "html5" },
-                { "name": "CSS", "icon": "css3" },
-                { "name": "JavaScript", "icon": "javascript" },
-                { "name": "React", "icon": "react" },
-                { "name": "TypeScript", "icon": "typescript" }
-            ]
-        },
         {
             "category": "Backend",
             "items": [
-                { "name": "Java", "icon": "java" },
-                { "name": "Spring Boot", "icon": "springboot" },
-                { "name": "Spring Security", "icon": "springsecurity" },
-                { "name": "REST APIs", "icon": "insomnia" },
-                { "name": "WebSockets", "icon": "socketdotio" },
-                { "name": "Python", "icon": "python" }
+                { "name": "Java", "icon": "java/ED8B00" },
+                { "name": "Spring Boot", "icon": "springboot/6DB33F" },
+                { "name": "Spring Security", "icon": "springsecurity/6DB33F" },
+                { "name": "REST APIs", "icon": "postman/FF6C37" },
+                { "name": "WebSockets", "icon": "socketdotio/010101" },
+                { "name": "Python", "icon": "python/3776AB" }
+            ]
+        },
+        {
+            "category": "Frontend",
+            "items": [
+                { "name": "HTML", "icon": "html5/E34F26" },
+                { "name": "CSS", "icon": "css3/1572B6" },
+                { "name": "JavaScript", "icon": "javascript/F7DF1E" },
+                { "name": "React", "icon": "react/61DAFB" },
+                { "name": "TypeScript", "icon": "typescript/3178C6" }
             ]
         },
         {
@@ -65,18 +50,20 @@
             "items": [
                 { "name": "MySQL", "icon": "mysql" },
                 { "name": "PostgreSQL", "icon": "postgresql" },
-                { "name": "MongoDB", "icon": "mongodb" }
+                { "name": "MongoDB", "icon": "mongodb" },
+                { "name": "SQL", "icon": "sqlite" }
             ]
         },
         {
             "category": "Tools",
             "items": [
-                { "name": "Git", "icon": "git" },
+                { "name": "Git", "icon": "git/F05032" },
                 { "name": "GitHub", "icon": "github" },
-                { "name": "Postman", "icon": "postman" },
-                { "name": "IntelliJ IDEA", "icon": "intellijidea" },
-                { "name": "VS Code", "icon": "visualstudiocode" },
-                { "name": "Streamlit", "icon": "streamlit" }
+                { "name": "Postman", "icon": "postman/FF6C37" },
+                { "name": "IntelliJ IDEA", "icon": "intellijidea/000000" },
+                { "name": "VS Code", "icon": "visualstudiocode/007ACC" },
+                { "name": "Streamlit", "icon": "streamlit/FF4B4B" },
+                { "name": "JWT Auth", "icon": "jsonwebtokens/000000" }
             ]
         }
     ],
